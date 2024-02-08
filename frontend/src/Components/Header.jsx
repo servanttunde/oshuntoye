@@ -2,6 +2,8 @@ import React from "react";
 import { Navbar, Nav, Container } from "react-bootstrap";
 import { FaShoppingCart, FaUser } from "react-icons/fa";
 
+import { FaServicestack } from "react-icons/fa6";
+
 const Header = () => {
   return (
     <header>
@@ -15,9 +17,13 @@ const Header = () => {
               <FaShoppingCart />
               {""} Cart
             </Nav.Link>
-            <Nav.Link href="/cart">
+            <Nav.Link href="/login">
               <FaUser />
               Login
+            </Nav.Link>
+            <Nav.Link href="/service">
+              <FaServicestack />
+              Service
             </Nav.Link>
           </Nav>
         </Container>

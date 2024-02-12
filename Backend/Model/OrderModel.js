@@ -1,7 +1,7 @@
 import { timeStamp } from "console";
 import mongoose, { Mongoose } from "mongoose";
 
-const orderSchema = new Mongoose.Schema(
+const orderSchema = new mongoose.Schema(
   {
     user: {
       type: mongoose.Schema.Types.ObjectId,
@@ -45,7 +45,7 @@ const orderSchema = new Mongoose.Schema(
     },
     paymentResult: {
       id: { type: Number },
-      status: { type: string },
+      status: { type: String },
       update_time: { type: String },
       email_address: { type: String },
     },
@@ -55,15 +55,15 @@ const orderSchema = new Mongoose.Schema(
       default: 0.0,
     },
     taxPrice: { type: Number, required: true, default: 0.0 },
-    shippingPrice: { type: Numner, required: true, default: 0.0 },
+    shippingPrice: { type: Number, required: true, default: 0.0 },
     totalPrice: { type: Number, required: true, default: 0.0 },
     isPaid: { type: Boolean, required: true, default: false },
     paidAt: { type: Date },
-    isDelivered: { type: Boolean, required, default: false },
+    isDelivered: { type: Boolean, required: true, default: false },
     deliveredAt: { type: Date },
   },
   { timestamps: true }
 );
-const Order = mongoose.Model("Order", orderSchema);
+const Order = mongoose.model("Order", orderSchema);
 
 export default Order;

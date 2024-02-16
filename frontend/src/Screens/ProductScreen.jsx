@@ -12,7 +12,6 @@ const ProductScreen = () => {
     isLoading,
     error,
   } = useGetProductDetailsQuery(productId);
-
   return (
     <>
       <Link className="btn btn-light my-3 " to="/">

@@ -27,11 +27,12 @@ const ProductScreen = () => {
     isLoading,
     error,
   } = useGetProductDetailsQuery(productId);
-  console.log(addToCart);
+
   const addToCartHandler = () => {
     dispatch(addToCart({ ...product, qty }));
     navigate("/cart");
   };
+
   return (
     <>
       <Link className="btn btn-light my-3 " to="/">
@@ -46,7 +47,8 @@ const ProductScreen = () => {
       ) : (
         <Row>
           <Col md={5}>
-            <Image src={product.image} alt={product.name} fluid />
+            {/* <Image src={product.image} alt={product.name} fluid /> */}
+            <Card.Text>{product.description}</Card.Text>
           </Col>
           <Col md={4}>
             <ListGroup variant="flush">

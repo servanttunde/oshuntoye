@@ -14,12 +14,20 @@ import "./assets/styles/bootstrap.custom.css";
 import reportWebVitals from "./reportWebVitals";
 import Homescreen from "./Screens/Homescreen";
 import ProductScreen from "./Screens/ProductScreen";
+import CartScreen from "./Screens/CartScreen";
+import ProfileScreen from "./Screens/ProfileScreen";
+import LoginScreen from "./Screens/LoginScreen.jsx";
+import ServiceScreen from "./Screens/ServiceScreen.jsx";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<App />}>
       <Route index={true} path="/" element={<Homescreen />} />
       <Route path="/product/:id" element={<ProductScreen />} />
+      <Route path="/cart" element={<CartScreen />} />
+      <Route path="/profile" element={<ProfileScreen />} />
+      <Route path="/login" element={<LoginScreen />} />
+      <Route path="/service" element={<ServiceScreen />} />
     </Route>
   )
 );
